@@ -1,0 +1,20 @@
+div.a {
+    font-family: sans-serif;
+    font-size: 1.5em;
+    text-align:center;
+}
+ 
+strong {
+    font-weight: 700;
+    background-color: yellow;
+}
+ 
+p {
+    font-family: sans-serif;
+}
+body{
+	    background-color: whitesmoke;
+}
+#abc{
+	text-align:right;
+}

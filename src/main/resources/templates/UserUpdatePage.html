@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:action="@{/user/updateDetails}" th:object="${user2}"
+		method="post" style="max-width: 600px; margin: 0 auto;">
+		<input type="hidden" name="id" />
+		<div class="m-3">
+			<div class="form-group row">
+				<label class="col-4 col-form-label">E-mail: </label>
+				<div class="col-8">
+					<input type="email" name="email" class="form-control"
+						required />
+				</div>
+			</div>
+
+
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Name: </label>
+				<div class="col-8">
+					<input type="text" name="name" class="form-control"
+						maxlength="20" />
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Address </label>
+				<div class="col-8">
+					<input type="text" name="address" class="form-control"
+						maxlength="20" />
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Country </label>
+				<div class="col-8">
+					<input type="text" name="country" class="form-control"
+						maxlength="20" />
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-4 col-form-label">State </label>
+				<div class="col-8">
+					<input type="text" name="state" class="form-control"
+						maxlength="20" />
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-4 col-form-label">District </label>
+				<div class="col-8">
+					<input type="text" name="district" class="form-control"
+						maxlength="20" />
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Phone-No </label>
+				<div class="col-8">
+					<input type="text" name="phoneNumber" class="form-control"
+						maxlength="20" />
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Gender </label>
+				<div class="col-8">
+					<input type="text" name="gender" class="form-control"
+						maxlength="20" />
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Roles:</label>
+				<div class="col-8">
+					<th:block th:each="role: ${listRoles}">
+						<input type="checkbox" name="roles" th:text="${role.name}"
+							th:value="${role.id}" class="m-2" />
+					</th:block>
+				</div>
+			</div>
+
+			<div>
+				<button type="submit" class="btn btn-primary">Update</button>
+			</div>
+		</div>
+	</form>
+</body>
+</html>
